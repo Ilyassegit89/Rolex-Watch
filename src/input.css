@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Custom css*/
+@media (max-width : 500px){
+    ul#pagination-ul{
+      display: flex;
+      justify-content: space-between;
+      gap: 1em;
+    }
+  }
+
+
+    
+
+/*Container*/
+  ul#pagination-ul li{
+    list-style-type: none;
+    background-color: #FFF;
+    border: 1px solid #eee;
+    padding-inline: 10px;
+    cursor: pointer;
+    border-radius: 9999px;
+    height: 22px;
+    box-shadow: 0 2px 16px 0px hsl(0deg 0% 100%);
+
+ }
+ ul#pagination-ul li:not(:last-child){
+    margin-bottom: 1em;
+
+}
+ ul#pagination-ul li:hover, ul#pagination-ul li.active{
+    background-color: #03478e;
+    color: white;
+ }
+ .slideContainer{
+            position: relative;
+            overflow: hidden;
+        }.slideContainer img{
+
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s;
+            z-index: 1;
+        }.slideContainer img.active{
+            opacity: 1;
+        }
+
+        
+      /*transition images on loading*/  
+        .slide-image-beg{
+            position: absolute;
+            
+            animation: slideToTop 1s forwards;
+        }
+        @keyframes slideToTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translateY(-80%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-60%);
+    opacity: 1;
+  }
+  75%{
+    transform: translateY(-40%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
